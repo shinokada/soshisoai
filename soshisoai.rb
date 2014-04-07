@@ -1,17 +1,13 @@
 class Soshisoai
 
-  attr_reader :names, :choices, :arr, :combi
+  attr_reader :names, :choices, :arr, :combi, :firsttwo, :firstnew, :matches
 
   def initialize 
     @arr=[]
     @names=[]
     @choices=[]
-    # file = File.new('./data/soshisoai.txt', "r")
-    # while (line = file.gets)
-    #   name, choices= line.split(':')
-    #   @names<<name
-    #   @choices<<choices.strip
-    # end
+    @firsttwo=[]
+    @matches=[]
     file = File.new('soshisoai.txt', "r")
     file.each_line{|line| @arr<< line.strip }
     @arr.each { |item| name, choices =item.split(':')
@@ -19,12 +15,25 @@ class Soshisoai
                 @choices<<choices.strip
     }
 
+    @combi = @arr.map do |e|
+      before, afters = e.split(":")
+      afters.split(",").map{|after| "#{before}#{after}"}.join(",")
+    end
+
+    @firsttwo = @combi.map{ |item| item[0..1]}
+
+    @firstnew = @firsttwo.map{|item| 
+      if item[0] =~ /[A-Z]/
+        item = item[1]+item[0]
+      else
+        item = item
+      end
+    }
+    @matches << @firstnew.detect{ |e| @firstnew.count(e) > 1}
+
 
   end
 
-  def makecombination 
-
-  end
 
   def combination
     
