@@ -3,9 +3,8 @@ class Soshisoai
   attr_reader :arr
 
   def initialize(filename)
-    @arr = []
     file = File.new(filename, "r")
-    file.each_line { |line| @arr<< line.strip }
+    @arr = file.each_line.map(&:strip)
   end
 
   def getcombi(arraylist)
