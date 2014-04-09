@@ -26,8 +26,6 @@ This gives the following result.
 
     cA
     fB
-    cC
-    dD
     aF
 
 
