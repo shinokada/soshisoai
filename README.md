@@ -33,6 +33,8 @@ Some inputs may not be valid.
 - it may have no choice.
 - it may have only the first choice.
 
+The following is another input.
+
 
     # soshisoai2.txt
     A:c,a,b
