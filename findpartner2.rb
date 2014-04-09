@@ -1,6 +1,6 @@
 require './soshisoai1.rb'
 
-myarr = Soshisoai.new ('./soshisoai.txt')
+myarr = Soshisoai.new ('./soshisoai2.txt')
 
 myarr1 = myarr.arr
 myarr2 = myarr.getcombi(myarr1)
