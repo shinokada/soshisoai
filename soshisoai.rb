@@ -8,47 +8,16 @@ class Soshisoai
     @combi = []
     file = File.new('soshisoai.txt', "r")
     file.each_line{|line| @arr<< line.strip }
-    # @arr.each { |item| name, choices =item.split(':')}
-
-    # @combi = @arr.map do |e|
-    #   before, afters = e.split(":")
-    #   afters.split(",").map{|after| "#{before}#{after}"}.join(",")
-    # end
-
-    # @firsttwo = @combi.map{ |item| item[0..1]}
-
-    # @firstnew = @firsttwo.map{|item| 
-    #   if item[0] =~ /[A-Z]/
-    #     item = item[1]+item[0]
-    #   else
-    #     item = item
-    #   end
-    # }
-    # @matches << @firstnew.detect{ |e| @firstnew.count(e) > 1}
   end
 
 
-  def findmatches
-    input = getcombi(@arr) 
-    start = 0
-    getcolumn(input, start)
-    
-    # @arr.map do |e|
-      # before, afters = e.split(":")
-      # afters.split(",").map{|after| "#{before}#{after}"}.join(",")
-    # end
-    
-    # getcolumn(@combi, 0)
-
-    # .map{ |item| item[0..1]}
-    #   .map{|item| 
-    #   if item[0] =~ /[A-Z]/
-    #     item = item[1]+item[0]
-    #   else
-    #     item = item
-    #   end
-    # }
-    # @matches << firstnew.detect{ |e| firstnew.count(e) > 1}
+  def findmatches(arr, start)
+    input = getcombi(arr) 
+    item = findpair(getcolumn(input, start))
+    item1 = eliminate(input, item)
+    # eliminate column, the first three letters
+    secondcol = eliminatecol(item1)
+    getcolumn(secondcol, start)
   end
 
   def getcombi(arraylist)
@@ -58,27 +27,33 @@ class Soshisoai
     end
   end
 
-
   def getcolumn(input,start)        
-    result = []
-    finishi = start + 1 
-    column = input.map{ |item| item[0..1]}
-      .map{|item| 
+    finish = start + 1 
+    column = input.map{ |item| item[start..finish]}
+    .map{|item| 
       if item[0] =~ /[A-Z]/
         item = item[1]+item[0]
       else
         item = item
       end
     }
+  end
+
+  def findpair column
+    result = []
     result << column.detect{ |e| column.count(e) > 1}
   end
 
-  def eliminate from item 
-    item1 =  item.join
-    item2 = item1.reverse
-    from.select { |pair| pair.include? item1 or pair.include? item2} 
-
+  def eliminate (from, item) 
+    from.reject do |e|
+      e.include?(item.join) || e.include?(item.join.reverse)
+    end
   end
 
+  def eliminatecol(arr) 
+      arr.map do |item|
+        item = item.gsub(/^[A-Z]../, '')
+      end
+  end
 
 end
