@@ -1,12 +1,12 @@
 class Soshisoai
 
-  attr_reader :arr, :matches, :combi
+  attr_reader :arr
 
-  def initialize 
+  def initialize(filename) 
     @arr=[]
     @matches=[]
     @combi = []
-    file = File.new('soshisoai.txt', "r")
+    file = File.new(filename, "r")
     file.each_line{|line| @arr<< line.strip }
   end
 
@@ -17,7 +17,9 @@ class Soshisoai
   def getcombi(arraylist)
     arraylist.map do |e|
       before, afters = e.split(":")
-      afters.split(",").map{|after| "#{before}#{after}"}.join(",")
+      if afters
+        afters.split(",").map{|after| "#{before}#{after}"}.join(",")
+      end
     end
   end
 
