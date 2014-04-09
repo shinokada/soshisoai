@@ -3,9 +3,10 @@
 [nishiwaki-higashinadarb/meetup](https://github.com/nishiwaki-higashinadarb/meetup/wiki/Programming-Dojo-2014.4.5)
 
 
-Run a test
+Run tests.
 
     rspec -c soshisoai1_spec.rb
+    rspec -c soshisoai2_spec.rb
 
 Run with the first example.
 
