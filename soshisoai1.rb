@@ -49,5 +49,7 @@ class Soshisoai
     arr.group_by{|s| s[-1]}.values.map(&:first)
   end
 
+  def deletesameprefix(arr)
+    arr.group_by{|s| s[0]}.values.map(&:first)
+  end
 end
-
