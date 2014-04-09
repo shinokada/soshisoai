@@ -4,14 +4,8 @@ class Soshisoai
 
   def initialize(filename) 
     @arr=[]
-    @matches=[]
-    @combi = []
     file = File.new(filename, "r")
     file.each_line{|line| @arr<< line.strip }
-  end
-
-  def self.mypartner
-
   end
 
   def getcombi(arraylist)
