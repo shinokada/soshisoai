@@ -3,11 +3,11 @@ require './soshisoai1.rb'
 myarr = Soshisoai.new ('./soshisoai2.txt')
 
 myarr1 = myarr.arr
-myarr2 = myarr.getcombi(myarr1)
-myarr3 = myarr.flatarr(myarr2)
-myarr4 = myarr.eliminateduplicate(myarr3)
-myarr5 = myarr.swapmale(myarr4)
-myarr6 = myarr.findmatch(myarr5)
-myarr7 = myarr.deletesamesuffix(myarr6)
-myarr8 = myarr.deletesameprefix(myarr7)
+myarr2 = myarr.get_combi(myarr1)
+myarr3 = myarr.flat_arr(myarr2)
+myarr4 = myarr.eliminate_duplicate(myarr3)
+myarr5 = myarr.swap_male(myarr4)
+myarr6 = myarr.find_match(myarr5)
+myarr7 = myarr.delete_same_suffix(myarr6)
+myarr8 = myarr.delete_same_prefix(myarr7)
 puts myarr8

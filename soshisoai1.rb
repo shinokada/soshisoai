@@ -7,8 +7,8 @@ class Soshisoai
     @arr = file.each_line.map(&:strip)
   end
 
-  def getcombi(arraylist)
-    arraylist.map do |e|
+  def get_combi(array_list)
+    array_list.map do |e|
       before, afters = e.split(":")
       if afters
         afters.split(",").map { |after| "#{before}#{after}" }.join(",")
@@ -16,15 +16,15 @@ class Soshisoai
     end
   end
 
-  def flatarr(arr)
+  def flat_arr(arr)
     arr.join(",").gsub(/[,]/, " ").split
   end
 
-  def eliminateduplicate(arr)
+  def eliminate_duplicate(arr)
     arr.find_all { |e| arr.count(e) == 1 }
   end
 
-  def swapmale(arr)
+  def swap_male(arr)
     arr.map { |item|
       if item[0] =~ /[A-Z]/
         item = item[1]+item[0]
@@ -34,15 +34,15 @@ class Soshisoai
     }
   end
 
-  def findmatch(arr)
+  def find_match(arr)
     arr.find_all { |e| arr.count(e) > 1 }.uniq
   end
 
-  def deletesamesuffix(arr)
+  def delete_same_suffix(arr)
     arr.group_by { |s| s[-1] }.values.map(&:first)
   end
 
-  def deletesameprefix(arr)
+  def delete_same_prefix(arr)
     arr.group_by { |s| s[0] }.values.map(&:first)
   end
 end
