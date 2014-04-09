@@ -2,31 +2,31 @@ class Soshisoai
 
   attr_reader :arr
 
-  def initialize(filename) 
-    @arr=[]
+  def initialize(filename)
+    @arr = []
     file = File.new(filename, "r")
-    file.each_line{|line| @arr<< line.strip }
+    file.each_line { |line| @arr<< line.strip }
   end
 
   def getcombi(arraylist)
     arraylist.map do |e|
       before, afters = e.split(":")
       if afters
-        afters.split(",").map{|after| "#{before}#{after}"}.join(",")
+        afters.split(",").map { |after| "#{before}#{after}" }.join(",")
       end
     end
   end
 
   def flatarr(arr)
-    arr.join(",").gsub(/[,]/," ").split
+    arr.join(",").gsub(/[,]/, " ").split
   end
 
   def eliminateduplicate(arr)
-    arr.find_all{ |e| arr.count(e) == 1 }    
+    arr.find_all { |e| arr.count(e) == 1 }
   end
 
   def swapmale(arr)
-    arr.map{|item| 
+    arr.map { |item|
       if item[0] =~ /[A-Z]/
         item = item[1]+item[0]
       else
@@ -36,14 +36,14 @@ class Soshisoai
   end
 
   def findmatch(arr)
-    arr.find_all{ |e| arr.count(e) > 1}.uniq
+    arr.find_all { |e| arr.count(e) > 1 }.uniq
   end
 
   def deletesamesuffix(arr)
-    arr.group_by{|s| s[-1]}.values.map(&:first)
+    arr.group_by { |s| s[-1] }.values.map(&:first)
   end
 
   def deletesameprefix(arr)
-    arr.group_by{|s| s[0]}.values.map(&:first)
+    arr.group_by { |s| s[0] }.values.map(&:first)
   end
 end
