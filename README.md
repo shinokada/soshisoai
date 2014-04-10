@@ -53,9 +53,11 @@ The following is another input.
 
 ## Test
 
-Run tests.
+Run a test.
 
     rspec -c spec/lib/soshisoai_spec.rb
+
+## Examples
 
 Run with the first example.
 
