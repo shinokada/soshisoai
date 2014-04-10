@@ -25,13 +25,7 @@ class Soshisoai
   end
 
   def swap_male(arr)
-    arr.map { |item|
-      if item[0] =~ /[A-Z]/
-        item = item[1]+item[0]
-      else
-        item = item
-      end
-    }
+    arr.map { |item| item =~ /^[A-Z]/ ? item.reverse : item }
   end
 
   def find_match(arr)
