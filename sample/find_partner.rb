@@ -1,6 +1,6 @@
-require_relative '../lib/soshisoai1'
+require_relative '../lib/soshisoai'
 
-file_path = File.expand_path('../../spec/fixtures/soshisoai2.txt', __FILE__)
+file_path = File.expand_path('../../spec/fixtures/soshisoai.txt', __FILE__)
 myarr = Soshisoai.new (file_path)
 
 myarr1 = myarr.initial_arr
