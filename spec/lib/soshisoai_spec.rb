@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Soshisoai do
   context 'soshisoai.txt' do
     let(:target_file) do
-      File.expand_path('../fixtures/soshisoai.txt', __FILE__)
+      File.expand_path('../../fixtures/soshisoai.txt', __FILE__)
     end
 
     before do
@@ -33,7 +33,7 @@ describe Soshisoai do
 
   context 'soshisoai2.txt' do
     let(:target_file) do
-      File.expand_path('../fixtures/soshisoai2.txt', __FILE__)
+      File.expand_path('../../fixtures/soshisoai2.txt', __FILE__)
     end
 
     before do
