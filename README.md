@@ -55,12 +55,11 @@ The following is another input.
 
 Run tests.
 
-    rspec -c soshisoai1_spec.rb
-    rspec -c soshisoai2_spec.rb
+    rspec -c spec/lib/soshisoai_spec.rb
 
 Run with the first example.
 
-    ruby findpartner.rb
+    ruby sample/find_partner.rb
 
 This gives the following result.
 
@@ -71,7 +70,7 @@ This gives the following result.
 
 Run with the second text.
 
-    ruby findpartner2.rb
+    ruby sample/find_partner2.rb
 
 This gives the following result.
 
