@@ -11,7 +11,7 @@ class Soshisoai
     array_list.map do |e|
       before, afters = e.split(":")
       if afters
-        afters.split(",").map { |after| "#{before}#{after}" }.join(",")
+        [before].product(afters.split(",")).map(&:join).join(',')
       end
     end
   end
