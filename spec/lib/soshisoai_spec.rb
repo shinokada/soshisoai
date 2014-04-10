@@ -42,6 +42,7 @@ describe Soshisoai do
       @my_arr3 = Soshisoai.flat_arr(@my_arr2)
       @my_arr4 = Soshisoai.swap_male(@my_arr3)
       @my_arr5 = Soshisoai.find_match(@my_arr4)
+      @my_arr6 = Soshisoai.delete_same_suffix(@my_arr5)
     end
 
 
@@ -50,6 +51,12 @@ describe Soshisoai do
     specify{ expect(Soshisoai.flat_arr(@my_arr2)).to eq ["Ac", "Aa", "Ab", "Bc", "Bf", "Ba", "Cf", "Cc", "Cb", "Dd", "Dd", "Dd", "Fe", "Fc", "Fa", "aA", "aD", "aF", "bC", "bB", "bA", "cD", "cA", "cC", "dA", "dA", "dB", "eC", "eA", "eE", "fD", "fB", "fA"]}
 
     specify{ expect(Soshisoai.swap_male(@my_arr3)).to eq ["cA", "aA", "bA", "cB", "fB", "aB", "fC", "cC", "bC", "dD", "dD", "dD", "eF", "cF", "aF", "aA", "aD", "aF", "bC", "bB", "bA", "cD", "cA", "cC", "dA", "dA", "dB", "eC", "eA", "eE", "fD", "fB", "fA"]}
+  
+    specify{ expect(Soshisoai.find_match(@my_arr4)).to eq ["cA", "aA", "bA", "fB", "cC", "bC", "dD", "aF", "dA"]}
+  
+    specify{ expect(Soshisoai.delete_same_suffix(@my_arr5)).to eq ["cA", "fB", "cC", "dD", "aF"]}
+ 
+    specify{ expect(Soshisoai.delete_same_prefix(@my_arr6)).to eq ["cA", "fB", "dD", "aF"]}
   end
 
 end
