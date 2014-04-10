@@ -2,8 +2,8 @@ class Soshisoai
 
   attr_reader :initial_arr
 
-  def initialize(filename)
-    file = File.new(filename, "r")
+  def initialize(file_name)
+    file = File.new(file_name, "r")
     @initial_arr = file.each_line.map(&:strip)
   end
 
