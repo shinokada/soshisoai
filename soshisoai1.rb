@@ -17,7 +17,7 @@ class Soshisoai
   end
 
   def flat_arr(arr)
-    arr.join(",").gsub(/[,]/, " ").split
+    arr.compact.map { |s| s.split(',') }.flatten
   end
 
   def eliminate_duplicate(arr)
