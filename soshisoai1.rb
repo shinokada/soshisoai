@@ -1,10 +1,10 @@
 class Soshisoai
 
-  attr_reader :arr
+  attr_reader :initial_arr
 
   def initialize(filename)
     file = File.new(filename, "r")
-    @arr = file.each_line.map(&:strip)
+    @initial_arr = file.each_line.map(&:strip)
   end
 
   def get_combi(array_list)

@@ -2,7 +2,7 @@ require './spec_helper'
 require './soshisoai1.rb'
 
 myarr = Soshisoai.new ('./soshisoai.txt')
-myarr1 = myarr.arr
+myarr1 = myarr.initial_arr
 myarr2 = myarr.get_combi(myarr1)
 arr2 = ["Ac", "Ac", "Aa", "Ba", "Bb"]
 myarr3 = myarr.flat_arr(myarr2)
@@ -11,7 +11,7 @@ myarr5 = myarr.find_match(myarr4)
 
 describe Soshisoai do
 
-  specify{ expect(myarr.arr).to eq ["A:c,b,a", "B:a,b,d", "C:a,c,b", "D:d,a,c", "a:A,C,D", "b:D,A,B", "c:B,A,C", "d:D,C,A"] }
+  specify{ expect(myarr.initial_arr).to eq ["A:c,b,a", "B:a,b,d", "C:a,c,b", "D:d,a,c", "a:A,C,D", "b:D,A,B", "c:B,A,C", "d:D,C,A"] }
   
   specify{ expect(myarr.get_combi(myarr1)).to eq ["Ac,Ab,Aa", "Ba,Bb,Bd", "Ca,Cc,Cb", "Dd,Da,Dc", "aA,aC,aD", "bD,bA,bB", "cB,cA,cC", "dD,dC,dA"] }
   

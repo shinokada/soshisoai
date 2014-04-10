@@ -2,7 +2,7 @@ require './soshisoai1.rb'
 
 myarr = Soshisoai.new ('./soshisoai.txt')
 
-myarr1 = myarr.arr
+myarr1 = myarr.initial_arr
 myarr2 = myarr.get_combi(myarr1)
 myarr3 = myarr.flat_arr(myarr2)
 myarr4 = myarr.eliminate_duplicate(myarr3)
