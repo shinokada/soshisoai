@@ -1,10 +1,13 @@
-require './spec_helper'
-require './soshisoai1.rb'
+require 'spec_helper'
 
 describe Soshisoai do
   context 'soshisoai.txt' do
+    let(:target_file) do
+      File.expand_path('../fixtures/soshisoai.txt', __FILE__)
+    end
+
     before do
-      @my_arr = Soshisoai.new ('./soshisoai.txt')
+      @my_arr = Soshisoai.new (target_file)
       @my_arr1 = @my_arr.initial_arr
       @my_arr2 = @my_arr.get_combi(@my_arr1)
       @arr2 = ["Ac", "Ac", "Aa", "Ba", "Bb"]
@@ -29,8 +32,12 @@ describe Soshisoai do
   end
 
   context 'soshisoai2.txt' do
+    let(:target_file) do
+      File.expand_path('../fixtures/soshisoai2.txt', __FILE__)
+    end
+
     before do
-      @my_arr = Soshisoai.new ('./soshisoai2.txt')
+      @my_arr = Soshisoai.new (target_file)
       @my_arr1 = @my_arr.initial_arr
       @my_arr2 = @my_arr.get_combi(@my_arr1)
       @my_arr3 = @my_arr.flat_arr(@my_arr2)

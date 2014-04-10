@@ -1,6 +1,7 @@
-require './soshisoai1.rb'
+require_relative '../lib/soshisoai1'
 
-myarr = Soshisoai.new ('./soshisoai2.txt')
+file_path = File.expand_path('../../spec/fixtures/soshisoai.txt', __FILE__)
+myarr = Soshisoai.new (file_path)
 
 myarr1 = myarr.initial_arr
 myarr2 = myarr.get_combi(myarr1)
