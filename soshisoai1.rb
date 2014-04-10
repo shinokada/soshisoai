@@ -21,7 +21,7 @@ class Soshisoai
   end
 
   def eliminate_duplicate(arr)
-    arr.find_all { |e| arr.count(e) == 1 }
+    arr.reject { |e| arr.count(e) > 1 }
   end
 
   def swap_male(arr)
