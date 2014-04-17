@@ -1,5 +1,8 @@
 require_relative '../lib/soshisoai'
+require 'logger'
 
+$Log = Logger.new('log_file.log')
+$Log.debug('Soshisoai3')
 file_path = File.expand_path('../../spec/fixtures/soshisoai3.txt', __FILE__)
 
 myarr1 = Soshisoai.parse_file(file_path)
@@ -10,5 +13,4 @@ myarr5 = Soshisoai.swap_male(myarr4)
 myarr6 = Soshisoai.find_match(myarr5)
 myarr7 = Soshisoai.delete_same_suffix(myarr6)
 myarr8 = Soshisoai.delete_same_prefix(myarr7)
-puts myarr8
-
+$Log.debug(myarr8)

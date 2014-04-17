@@ -45,7 +45,6 @@ describe Soshisoai do
       @my_arr6 = Soshisoai.delete_same_suffix(@my_arr5)
     end
 
-
     specify { expect(Soshisoai.get_combi(@my_arr1)).to eq ['Ac,Aa,Ab', 'Bc,Bf,Ba', 'Cf,Cc,Cb', 'Dd,Dd,Dd', nil, 'Fe,Fc,Fa', 'aA,aD,aF', 'bC,bB,bA', 'cD,cA,cC', 'dA,dA,dB', 'eC,eA,eE', 'fD,fB,fA'] }
 
     specify { expect(Soshisoai.flat_arr(@my_arr2)).to eq ['Ac', 'Aa', 'Ab', 'Bc', 'Bf', 'Ba', 'Cf', 'Cc', 'Cb', 'Dd', 'Dd', 'Dd', 'Fe', 'Fc', 'Fa', 'aA', 'aD', 'aF', 'bC', 'bB', 'bA', 'cD', 'cA', 'cC', 'dA', 'dA', 'dB', 'eC', 'eA', 'eE', 'fD', 'fB', 'fA'] }
@@ -58,5 +57,4 @@ describe Soshisoai do
  
     specify { expect(Soshisoai.delete_same_prefix(@my_arr6)).to eq ['cA', 'fB', 'dD', 'aF'] }
   end
-
 end
