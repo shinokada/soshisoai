@@ -1,5 +1,4 @@
 require 'logger'
-require 'logger'
 require_relative 'soshisoai.rb'
 ##
 # Test with fixtures/soshisoai files
@@ -7,7 +6,7 @@ class MyApp
   ##
   # Write the results in a log file
   def self.logger(filename)
-    log_file = File.expand_path('../sample/log_file.log')
+    log_file = File.expand_path('./log_file.log')
     @logger = Logger.new(log_file)
     file_path = File.expand_path("../../spec/fixtures/#{filename}.txt", __FILE__) 
     @logger.debug('Soshisoai')
@@ -22,4 +21,3 @@ class MyApp
     @logger.debug(myarr8)
   end
 end
-
