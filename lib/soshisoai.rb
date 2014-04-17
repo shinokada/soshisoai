@@ -58,7 +58,7 @@ class Soshisoai
     arr.group_by { |s| s[-1] }.values.map(&:first)
   end
 
-  ## 
+  ##
   # This deletes the same prefix i.e. aC aD delete aD
   # @return [Array]
   def self.delete_same_prefix(arr)

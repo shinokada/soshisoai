@@ -8,7 +8,7 @@ class MyApp
   def self.logger(filename)
     log_file = File.expand_path('./log_file.log')
     @logger = Logger.new(log_file)
-    file_path = File.expand_path("../../spec/fixtures/#{filename}.txt", __FILE__) 
+    file_path = File.expand_path("../../spec/fixtures/#{filename}.txt", __FILE__)
     @logger.debug('Soshisoai')
     myarr1 = Soshisoai.parse_file(file_path)
     myarr2 = Soshisoai.get_combi(myarr1)
