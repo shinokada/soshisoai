@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!file.README.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'><ul><li>
+<p><a
+href="https://www.evernote.com/shard/s302/sh/81bf8429-c95e-43fb-aa75-b1e9aab4d162/aebadd79d04aed237beae278b58893c1">相思相愛</a></p>
+</li><li>
+<p><a
+href="https://github.com/nishiwaki-higashinadarb/meetup/wiki/Programming-Dojo-2014.4.5">nishiwaki-higashinadarb/meetup</a></p>
+</li></ul>
+
+<h2 id="label-Problem">Problem</h2>
+
+<p>A group of male and female participants give three choices.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='comment'># soshisoai.txt
+</span><span class='const'>A</span><span class='symbol'>:c</span><span class='comma'>,</span><span class='id identifier rubyid_b'>b</span><span class='comma'>,</span><span class='id identifier rubyid_a'>a</span>
+<span class='const'>B</span><span class='symbol'>:a</span><span class='comma'>,</span><span class='id identifier rubyid_b'>b</span><span class='comma'>,</span><span class='id identifier rubyid_d'>d</span>
+<span class='const'>C</span><span class='symbol'>:a</span><span class='comma'>,</span><span class='id identifier rubyid_c'>c</span><span class='comma'>,</span><span class='id identifier rubyid_b'>b</span>
+<span class='const'>D</span><span class='symbol'>:d</span><span class='comma'>,</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span><span class='id identifier rubyid_c'>c</span>
+<span class='id identifier rubyid_a'>a</span><span class='symbol'>:A</span><span class='comma'>,</span><span class='const'>C</span><span class='comma'>,</span><span class='const'>D</span>
+<span class='id identifier rubyid_b'>b</span><span class='symbol'>:D</span><span class='comma'>,</span><span class='const'>A</span><span class='comma'>,</span><span class='const'>B</span>
+<span class='id identifier rubyid_c'>c</span><span class='symbol'>:B</span><span class='comma'>,</span><span class='const'>A</span><span class='comma'>,</span><span class='const'>C</span>
+<span class='id identifier rubyid_d'>d</span><span class='symbol'>:D</span><span class='comma'>,</span><span class='const'>C</span><span class='comma'>,</span><span class='const'>A</span></code></pre>
+
+<p>Male A&#39;s first choice is c, the second one is b and the third choice is
+a from the female group.</p>
+
+<h2 id="label-Desired+outputs.">Desired outputs.</h2>
+
+<pre class="code ruby"><code class="ruby"><span class='const'>A</span><span class='op'>-</span><span class='id identifier rubyid_c'>c</span>
+<span class='const'>B</span><span class='op'>-</span><span class='id identifier rubyid_b'>b</span>
+<span class='const'>C</span><span class='op'>-</span><span class='id identifier rubyid_a'>a</span>
+<span class='const'>D</span><span class='op'>-</span><span class='id identifier rubyid_d'>d</span></code></pre>
+
+<p>If the first choice of male and female participants are the same it creates
+a pair. If there are no matches in the first choices, then you need to use
+the second chices etc.</p>
+
+<p>Some inputs may not be valid.</p>
+<ul><li>
+<p>it may have a wrong person who does not exist.</p>
+</li><li>
+<p>it may have the same person&#39;s name.</p>
+</li><li>
+<p>it may have no choice.</p>
+</li><li>
+<p>it may have only the first choice.</p>
+</li></ul>
+
+<p>The following is another input.</p>
+
+<pre class="code ruby"><code class="ruby"># soshisoai2.txt
+A:c,a,b
+B:c,f,a
+C:f,c,b
+D:d,d,d
+E:
+F:e,c,a
+a:A,D,F
+b:C,B,A
+c:D,A,C
+d:A,A,B
+e:C,A,E
+f:D,B,A</code></pre>
+
+<h2 id="label-Test">Test</h2>
+
+<p>Run a test.</p>
+
+<pre class="code ruby"><code class="ruby">rspec -c spec/lib/soshisoai_spec.rb</code></pre>
+
+<h2 id="label-Examples">Examples</h2>
+
+<p>Run with the first example.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_ruby'>ruby</span> <span class='id identifier rubyid_sample'>sample</span><span class='op'>/</span><span class='id identifier rubyid_find_partner'>find_partner</span><span class='period'>.</span><span class='id identifier rubyid_rb'>rb</span></code></pre>
+
+<p>This gives the following result.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_cA'>cA</span>
+<span class='id identifier rubyid_bB'>bB</span>
+<span class='id identifier rubyid_aC'>aC</span>
+<span class='id identifier rubyid_dD'>dD</span></code></pre>
+
+<p>Run with the second text.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_ruby'>ruby</span> <span class='id identifier rubyid_sample'>sample</span><span class='op'>/</span><span class='id identifier rubyid_find_partner2'>find_partner2</span><span class='period'>.</span><span class='id identifier rubyid_rb'>rb</span></code></pre>
+
+<p>This gives the following result.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_cA'>cA</span>
+<span class='id identifier rubyid_fB'>fB</span>
+<span class='id identifier rubyid_aF'>aF</span></code></pre>
+</div></div>
+
+    <div id="footer">
+  Generated on Thu Apr 17 21:09:07 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-2.1.1).
+</div>
+
+  </body>
+</html>
