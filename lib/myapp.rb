@@ -1,15 +1,16 @@
-require_relative '../lib/soshisoai'
 require 'logger'
+require 'logger'
+require_relative 'soshisoai.rb'
 ##
-# Test 2 with fixtures/soshisoai2.txt
+# Test with fixtures/soshisoai files
 class MyApp
-  @logger = Logger.new('log_file.log')
-  ## 
+  ##
   # Write the results in a log file
-  def self.logger
-    @logger.debug('Soshisoai2')
-    file_path = File.expand_path('../../spec/fixtures/soshisoai2.txt', __FILE__)
-    
+  def self.logger(filename)
+    log_file = File.expand_path('../sample/log_file.log')
+    @logger = Logger.new(log_file)
+    file_path = File.expand_path("../../spec/fixtures/#{filename}.txt", __FILE__) 
+    @logger.debug('Soshisoai')
     myarr1 = Soshisoai.parse_file(file_path)
     myarr2 = Soshisoai.get_combi(myarr1)
     myarr3 = Soshisoai.flat_arr(myarr2)
@@ -21,3 +22,4 @@ class MyApp
     @logger.debug(myarr8)
   end
 end
+

@@ -61,7 +61,15 @@ Run a test.
 
 Run with the first example.
 
-    ruby sample/find_partner.rb
+    $ cd /path/to/soshisoai/lib/
+    $ irb
+    $ load 'myapp'
+    # for sample 1
+    $ MyApp.logger('soshisoai')
+    # for sample 2
+    $ MyApp.logger('soshisoai2')
+    # for sample 3
+    $ MyApp.logger('soshisoai3')
 
 This gives the following result.
 
@@ -70,15 +78,8 @@ This gives the following result.
     aC
     dD
 
-Run with the second text.
-
-    ruby sample/find_partner2.rb
-
-This gives the following result.
+The second text gives the following result.
 
     cA
     fB
     aF
-
-
-
